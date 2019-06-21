@@ -78,6 +78,11 @@ public class ArrayDoubleSolution implements DoubleSolution {
   }
 
   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! NEW !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // See ./jmetal-core/src/main/java/org/uma/jmetal/solution/impl/AbstractGenericSolution.java for the implementation.
+  // and /home/cian/IdeaProjects/jMetal/jmetal-core/src/main/java/org/uma/jmetal/solution/impl/ArrayDoubleSolution.java for implementation which seems to never be used.
+  // Also see ./jmetal-core/src/main/java/org/uma/jmetal/solution/Solution.java
+  // Also ./jmetal-core/src/main/java/org/uma/jmetal/util/comparator/DominanceComparator.java
+  // /home/cian/IdeaProjects/jMetal/jmetal-core/src/main/java/org/uma/jmetal/util/point/PointSolution.java
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   @Override
   public double getObjective_CDAS(int index) {  // CDAS changes f_i(x) => f_i`(x) = (r * sin(w_i - phi_i)) / sin(phi_i) where r = ||f(x)||, w_i = arccos(f_i(x) / ||f(x)||), and phi_i = S_i * pi.

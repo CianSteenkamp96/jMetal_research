@@ -16,6 +16,11 @@ public interface Solution<T> extends Serializable {
   double[] getObjectives() ;
 
   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! NEW !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // See ./jmetal-core/src/main/java/org/uma/jmetal/solution/impl/AbstractGenericSolution.java for the implementation.
+  // and /home/cian/IdeaProjects/jMetal/jmetal-core/src/main/java/org/uma/jmetal/solution/impl/ArrayDoubleSolution.java for implementation which seems to never be used.
+  // Also see ./jmetal-core/src/main/java/org/uma/jmetal/solution/Solution.java
+  // Also ./jmetal-core/src/main/java/org/uma/jmetal/util/comparator/DominanceComparator.java
+  // /home/cian/IdeaProjects/jMetal/jmetal-core/src/main/java/org/uma/jmetal/util/point/PointSolution.java
   ////////////////////////////////////////////////////////////////////////////////////////////////
   double getObjective_CDAS(int index) ;
   static double dotProduct(double[] a, double[] b) {

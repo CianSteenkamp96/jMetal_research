@@ -32,21 +32,29 @@ public abstract class WFG extends AbstractDoubleProblem {
   protected int d = 1;
   protected Random random = new Random();
 
-  /**
-   * Constructor
-   * Creates a wfg problem
-   *
-   * @param k            position-related parameters
-   * @param l            distance-related parameters
-   * @param M            Number of objectives
-   */
+//  /**
+//   * Constructor
+//   * Creates a wfg problem
+//   *
+//   * @param k            position-related parameters
+//   * @param l            distance-related parameters ************************* Take note of comments below ***************************
+//   * @param M            Number of objectives
+//   */
+
+// NB !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! NEW !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Param l now represents the number of decisionVars
+// Also, previously param l was only used to set numDecisionVars to this.k + this.l => this was recommended however since I am investigating scalability I need to alter the num dimensions specifically/explicitly.
+// That is, param l was never used anywhere else.
+// In the WFG2 t2 transformation a new/different l is calculated - which is not this.l
+// Therefore, I used this l param to be used as the number of decision variables - in order to not change the actual code.
   public WFG(Integer k, Integer l, Integer M) {
     this.k = k;
     this.l = l;
     this.m = M;
 
 //    setNumberOfVariables(this.k + this.l);
-    setNumberOfVariables(30); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! #decisionVars / #dims !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//    setNumberOfVariables(30); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! #decisionVars / #dims !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    setNumberOfVariables(l); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! #decisionVars / #dims !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     setNumberOfObjectives(this.m);
     setNumberOfConstraints(0);
 

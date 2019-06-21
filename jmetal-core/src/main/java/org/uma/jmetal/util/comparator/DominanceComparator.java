@@ -75,6 +75,12 @@ public class DominanceComparator<S extends Solution<?>> implements Comparator<S>
     int result ;
     for (int i = 0; i < solution1.getNumberOfObjectives(); i++) {
 //      double value1 = solution1.getObjective(i);
+
+      // See ./jmetal-core/src/main/java/org/uma/jmetal/solution/impl/AbstractGenericSolution.java for the implementation.
+      // and /home/cian/IdeaProjects/jMetal/jmetal-core/src/main/java/org/uma/jmetal/solution/impl/ArrayDoubleSolution.java for implementation which seems to never be used.
+      // Also see ./jmetal-core/src/main/java/org/uma/jmetal/solution/Solution.java
+      // Also ./jmetal-core/src/main/java/org/uma/jmetal/util/comparator/DominanceComparator.java
+      // /home/cian/IdeaProjects/jMetal/jmetal-core/src/main/java/org/uma/jmetal/util/point/PointSolution.java
       double value1 = solution1.getObjective_CDAS(i);  /////////////////////////////////////// NEW - for CDAS-SMPSO //////////////////////////////////
 //      double value2 = solution2.getObjective(i);
       double value2 = solution2.getObjective_CDAS(i); /////////////////////////////////////// NEW - for CDAS-SMPSO //////////////////////////////////
