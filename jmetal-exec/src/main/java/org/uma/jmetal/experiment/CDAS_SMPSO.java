@@ -69,20 +69,55 @@ public class CDAS_SMPSO {
 		String referenceFrontDir;
 
 		if(numObjectives == 3){
-//			referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg3Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
-			referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg3Obj";
+			if(Objects.equals(benchmarkSuiteName, "WFG")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg3Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg3Obj";
+			} else if(Objects.equals(benchmarkSuiteName, "DTLZ")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/dtlz3Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/dtlz3Obj";
+			} else{
+				throw new JMetalException("This experiment only supports benchmark suites WFG and DTLZ.\n");
+			}
 		} else if(numObjectives == 5){
-//			referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg5Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
-			referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg5Obj";
+			if(Objects.equals(benchmarkSuiteName, "WFG")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg5Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg5Obj";
+			} else if(Objects.equals(benchmarkSuiteName, "DTLZ")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/dtlz5Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/dtlz5Obj";
+			} else{
+				throw new JMetalException("This experiment only supports benchmark suites WFG and DTLZ.\n");
+			}
 		} else if(numObjectives == 8){
-//			referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg8Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
-			referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg8Obj";
+			if(Objects.equals(benchmarkSuiteName, "WFG")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg8Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg8Obj";
+			} else if(Objects.equals(benchmarkSuiteName, "DTLZ")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/dtlz8Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/dtlz8Obj";
+			} else{
+				throw new JMetalException("This experiment only supports benchmark suites WFG and DTLZ.\n");
+			}
 		} else if(numObjectives == 10){
-//			referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg10Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
-			referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg10Obj";
+			if(Objects.equals(benchmarkSuiteName, "WFG")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg10Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg10Obj";
+			} else if(Objects.equals(benchmarkSuiteName, "DTLZ")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/dtlz10Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/dtlz10Obj";
+			} else{
+				throw new JMetalException("This experiment only supports benchmark suites WFG and DTLZ.\n");
+			}
 		} else if(numObjectives == 15){
-//			referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg15Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
-			referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg15Obj";
+			if(Objects.equals(benchmarkSuiteName, "WFG")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg15Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/wfg15Obj";
+			} else if(Objects.equals(benchmarkSuiteName, "DTLZ")){
+//				referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/dtlz15Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
+				referenceFrontDir = "/home/cian/IdeaProjects/referenceFronts/dtlz15Obj";
+			} else{
+				throw new JMetalException("This experiment only supports benchmark suites WFG and DTLZ.\n");
+			}
 		} else {
 			throw new JMetalException("This experiment only supports #objectives 3, 5, 8, 10, and 15.\n");
 		}
@@ -117,7 +152,7 @@ public class CDAS_SMPSO {
 		} else if(Objects.equals(benchmarkSuiteName, "DTLZ")){
 			problemList = genProblemList_DTLZ(problemList, numDecisionVariables, numObjectives);
 		} else {
-			throw new JMetalException("This experiment only supports benchmark suites WFG and DTLZ.\n");
+			throw new JMetalException("This experiment only supports benchmark suites WFG and DTLZ.\n");  // This case is impossible due to previous check for benchmarkSuiteName when the referenceFrontDir is set above/earlier.
 		}
 
 		List<ExperimentAlgorithm<DoubleSolution, List<DoubleSolution>>> algorithmList =
@@ -133,7 +168,7 @@ public class CDAS_SMPSO {
 				.setOutputParetoSetFileName("VAR")
 				.setIndicatorList(Arrays.asList(new InvertedGenerationalDistance<DoubleSolution>()))
 				.setIndependentRuns(INDEPENDENT_RUNS)
-				.setNumberOfCores(8) // Maybe increase this for CHPC ??????????????????????????????????????????????????????????????????????????????????
+				.setNumberOfCores(8) // Maybe increase this for CHPC ?????????????????????????????????????????????????????????????????????????????????? 24?
 				.build();
 
 		new ExecuteAlgorithms<>(experiment).run();
