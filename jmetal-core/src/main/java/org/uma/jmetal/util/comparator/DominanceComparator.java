@@ -36,11 +36,6 @@ public class DominanceComparator<S extends Solution<?>> implements Comparator<S>
     constraintViolationComparator = constraintComparator ;
   }
 
-  /** Constructor */
-  public DominanceComparator(ConstraintViolationComparator<S> constraintComparator, double epsilon, double _s) {
-    constraintViolationComparator = constraintComparator ;
-  }
-
   /**
    * Compares two solutions.
    *
