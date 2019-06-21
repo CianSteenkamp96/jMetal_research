@@ -33,7 +33,7 @@ public class CDAS_SMPSO {
 //	private static final int ITERATIONS = 10000; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
 	private static final int ITERATIONS = 100;
 
-	static List<ExperimentProblem<DoubleSolution>> genProblemList_WFG(List<ExperimentProblem<DoubleSolution>> problemList, int k, int numDecisionVariables, int numObjectives) {
+	private static List<ExperimentProblem<DoubleSolution>> genProblemList_WFG(List<ExperimentProblem<DoubleSolution>> problemList, int k, int numDecisionVariables, int numObjectives) {
 		problemList.add(new ExperimentProblem<>(new WFG1(k, numDecisionVariables, numObjectives)));
 		problemList.add(new ExperimentProblem<>(new WFG2(k, numDecisionVariables, numObjectives)));
 		problemList.add(new ExperimentProblem<>(new WFG3(k, numDecisionVariables, numObjectives)));
@@ -46,7 +46,7 @@ public class CDAS_SMPSO {
 		return problemList;
 	}
 
-	static List<ExperimentProblem<DoubleSolution>> genProblemList_DTLZ(List<ExperimentProblem<DoubleSolution>> problemList, int numDecisionVariables, int numObjectives) {
+	private static List<ExperimentProblem<DoubleSolution>> genProblemList_DTLZ(List<ExperimentProblem<DoubleSolution>> problemList, int numDecisionVariables, int numObjectives) {
 		problemList.add(new ExperimentProblem<>(new DTLZ1(numDecisionVariables, numObjectives)));
 		problemList.add(new ExperimentProblem<>(new DTLZ2(numDecisionVariables, numObjectives)));
 		problemList.add(new ExperimentProblem<>(new DTLZ3(numDecisionVariables, numObjectives)));
@@ -66,7 +66,7 @@ public class CDAS_SMPSO {
 		int numObjectives = Integer.parseInt(args[1]);
 		int numDecisionVariables = Integer.parseInt(args[2]);
 		String benchmarkSuiteName = args[3];
-		String referenceFrontDir = "";
+		String referenceFrontDir;
 
 		if(numObjectives == 3){
 //			referenceFrontDir = "/home/csteenkamp/lustre/msc_phd/referenceFronts/wfg3Obj"; // Update here before running on CHPC !!!!!!!!!!!!!!!!!!!!!!!!!!
