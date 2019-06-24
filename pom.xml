@@ -79,7 +79,7 @@
       <configuration>
         <archive>
           <manifest>
-            <mainClass>org.uma.jmetal.experiment.SMPSO_15Obj</mainClass>
+            <mainClass>org.uma.jmetal.experiment.CDAS_SMPSO</mainClass>
           </manifest>
         </archive>
       </configuration>
