@@ -76,7 +76,7 @@ public abstract class AbstractGenericSolution<T, P extends Problem<?>> implement
     double r = Math.sqrt(Solution.dotProduct(objectives, objectives));
     double w_i = Math.acos((objectives[index] / r));
     // S => {0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75}
-    double s = 0.35; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! User-specified s-val - update here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    double s = 0.75; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! User-specified s-val - update here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     double phi_i = s * Math.PI;
     return (r * Math.sin(w_i - phi_i)) / Math.sin(phi_i); // f_i`(x)
   }
